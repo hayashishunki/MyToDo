@@ -1,0 +1,13 @@
+# ビルド成果物
+/build/
+/app/build/
+
+# IDE関連の設定ファイル
+.idea/
+*.iml
+
+# 個人設定
+/local.properties
+
+# その他
+.DS_Store
