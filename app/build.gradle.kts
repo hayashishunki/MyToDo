@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt") version "2.1.10"
 }
 
 android {
@@ -71,4 +72,8 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
+
+    kapt("groupId:artifactId:version")
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
 }
