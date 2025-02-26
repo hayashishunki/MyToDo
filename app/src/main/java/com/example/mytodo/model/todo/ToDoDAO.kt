@@ -9,16 +9,15 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ToDoDAO {
-    // 作成日時が指定したもの未満で、上位n件を取得する
     @Query("select * from ToDo where created < :startCreated order by created desc limit :limit")
     fun getWithCreated(startCreated: Long, limit: Int): Flow<List<ToDo>>
 
     @Insert
-    suspend fun create(todo: ToDo)
+    suspend fun create(todo: ToDo): Long
 
     @Update
-    suspend fun update(todo: ToDo)
+    suspend fun update(todo: ToDo): Int
 
     @Delete
-    suspend fun delete(todo: ToDo)
+    suspend fun delete(todo: ToDo): Int
 }
